@@ -1,10 +1,10 @@
-package com.john.webfluxspringboot3_0.repositories;
+package com.john.webfluxspringboot3_0.services;
 
 import com.john.webfluxspringboot3_0.model.Employee;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
-public interface EmployeeRepository {
+public interface EmployeeService {
 
     void create(Employee e);
 

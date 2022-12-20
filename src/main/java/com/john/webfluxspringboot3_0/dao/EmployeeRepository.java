@@ -1,2 +1,13 @@
-package com.john.webfluxspringboot3_0.dao;public class EmployeeRepository {
+package com.john.webfluxspringboot3_0.dao;
+
+import com.john.webfluxspringboot3_0.model.Employee;
+import org.springframework.data.mongodb.repository.Query;
+import org.springframework.data.mongodb.repository.ReactiveMongoRepository;
+import reactor.core.publisher.Flux;
+
+public interface EmployeeRepository extends ReactiveMongoRepository<Employee, Integer> {
+
+    @Query("{ 'name': ?0 }")
+    Flux<Employee> findByName(final String name);
+
 }
